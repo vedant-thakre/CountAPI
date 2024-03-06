@@ -3,7 +3,9 @@ import colors from 'colors';
 import countRoutes from './countRoutes.js'
 import { connectDB } from './db.js';
 import cors from "cors";
+import dotenv from 'dotenv';
 
+dotenv.config();
 const app = express();
 connectDB();
 
@@ -24,6 +26,6 @@ app.get("/", (req, res) => {
     res.send("Server is Running");
 });
 
-app.listen(8080, () => {
-    console.log("Server is Live on PORT 8080".yellow.bold);
+app.listen(process.env.PORT, () => {
+    console.log(`Server is Live on PORT ${process.env.PORT}`.yellow.bold);
 })
