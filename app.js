@@ -13,7 +13,7 @@ connectDB();
 app.use(express.json());
 app.use(
   cors({
-    origin: "http://your-allowed-origin.com", 
+    origin: "https://vedant-thakre.vercel.app",
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
   })
 );
